@@ -1,0 +1,3 @@
+<%= render_turbo_stream_flash_messages %>
+<%= turbo_stream.append "comments", partial: "comment", locals: {comment: @comment} %>
+<%= turbo_stream.update Comment.new, partial: "form", locals: {project:, comment: Comment.new} %>

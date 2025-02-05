@@ -3,7 +3,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :projects, except: %i[show destroy]
+  resources :projects, except: :destroy do
+    resources :comments, only: %i[create]
+  end
 
   get "up" => "rails/health#show", as: :rails_health_check
   root "projects#index"

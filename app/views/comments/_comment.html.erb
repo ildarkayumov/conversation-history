@@ -1,0 +1,12 @@
+<div class="bg-white p-4 rounded-lg shadow-md">
+  <h3 class="text-lg font-bold">
+    <%= comment.user.email %>
+  </h3>
+  <p class="text-gray-700 text-sm mb-2">
+    Posted on
+    <%= comment.created_at.strftime("%B %d, %Y") %>
+  </p>
+  <p class="text-gray-700">
+    <%= comment.body %>
+  </p>
+</div>

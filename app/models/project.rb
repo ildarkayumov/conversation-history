@@ -9,6 +9,7 @@ class Project < ApplicationRecord
   enum :status, STATUSES
 
   belongs_to :user
+  has_many :comments, dependent: :destroy
 
   validates :name, presence: true
 end
