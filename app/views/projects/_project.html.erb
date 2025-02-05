@@ -1,0 +1,23 @@
+<tr id="<%= dom_id(project) %>">
+  <td class="p-4 border-b border-blue-gray-50">
+    <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+      <%= link_to project.name, project %>
+    </p>
+  </td>
+  <td class="p-4 border-b border-blue-gray-50">
+    <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+      <%= project.description %>
+    </p>
+  </td>
+  <td class="p-4 border-b border-blue-gray-50">
+    <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+      <%= project.status %>
+    </p>
+  </td>
+  <td class="p-4 border-b border-blue-gray-50" data-controller="slideover">
+    <% if policy(project).edit? %>
+      <%= link_to "Edit", [:edit, project], class: "block font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900 cursor-pointer", data: { turbo_frame: dom_id(project, "edit") } %>
+      <%= turbo_frame_tag dom_id(project, "edit") %>
+    <% end %>
+  </td>
+</tr>

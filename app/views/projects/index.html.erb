@@ -1,0 +1,35 @@
+<div class="w-full">
+  <div class="mb-4 flex justify-between items-center" data-controller="slideover">
+    <%= link_to "New project", new_project_path, class: "inline-flex justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-blue-500 sm:w-auto", data: { turbo_frame: dom_id(Project.new) } %>
+    <%= turbo_frame_tag Project.new %>
+  </div>
+  <div class="relative flex flex-col w-full h-full overflow-scroll text-gray-700 bg-white shadow-md bg-clip-border">
+    <table class="w-full text-left table-auto min-w-max">
+      <thead>
+        <tr>
+          <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+              Name
+            </p>
+          </th>
+          <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+              Description
+            </p>
+          </th>
+          <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
+              Status
+            </p>
+          </th>
+          <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
+            <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70"></p>
+          </th>
+        </tr>
+      </thead>
+      <tbody id="projects">
+        <%= render @projects %>
+      </tbody>
+    </table>
+  </div>
+</div>

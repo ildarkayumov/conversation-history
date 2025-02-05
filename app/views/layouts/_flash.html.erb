@@ -1,0 +1,7 @@
+<% if flash.present? %>
+  <% flash.each do |name, message| %>
+    <div class="fixed right-4 top-4 border-l-4 p-4 mb-4 <%= tailwind_classes_for(name) %>" role="alert" data-controller="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
