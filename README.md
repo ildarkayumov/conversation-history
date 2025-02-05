@@ -1,24 +1,42 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Project conversation history
 
-Things you may want to cover:
+### Ruby version
 
-* Ruby version
+`ruby 3.3.7`
 
-* System dependencies
+### System dependencies
 
-* Configuration
+`PostgreSQL 17.0`
 
-* Database creation
+### Configuration
 
-* Database initialization
+`bundle install`
 
-* How to run the test suite
+### Database creation
 
-* Services (job queues, cache servers, search engines, etc.)
+`bin/rails db:create`
 
-* Deployment instructions
+### Database initialization
 
-* ...
+`bin/rails db:migrate`
+
+### Testing
+
+`bin/rake`
+
+### Development
+
+`bin/dev`
+
+### Quality
+
+```bash
+  bin/rubocop
+  bin/brakeman
+```
+
+### Deployment instructions
+
+`git push heroku main`
