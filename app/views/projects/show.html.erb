@@ -16,4 +16,9 @@
       <%= render "comments/form", project: @project, comment: Comment.new %>
     <% end %>
   </div>
+  <h2 class="mt-4 text-lg font-bold mb-4">History</h2>
+  <div class="flex flex-col space-y-4">
+    <%= render @project.project_status_changes %>
+    <div class="hidden only:block">No activity</div>
+  </div>
 </div>

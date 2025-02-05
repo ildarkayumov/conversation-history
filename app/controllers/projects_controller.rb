@@ -35,7 +35,7 @@ class ProjectsController < ApplicationController
   def update
     authorize @project
 
-    if @project.update(project_params)
+    if Projects::UpdateService.new(@project, project_params).call
       respond_to do |format|
         format.html { redirect_back_or_to projects_path, notice: "Project was successfully updated." }
         format.turbo_stream { flash.now[:notice] = "Project was successfully updated." }
